@@ -24,7 +24,7 @@ defmodule Basic do
     IO.puts "Atom #{is_atom(:cidade)}"
 
     # Double quotes for atoms with space
-    "São José"
+    :"São José"
 
     # Range defines a start and end using ints
     range_1 = 1..10
@@ -32,5 +32,48 @@ defmodule Basic do
 
   end
 
+  def strings do
+    # Strings are defined with double quotes
+    my_string = "My string"
+    IO.puts "String length: #{String.length(my_string)}"
+
+    # Concatenate strings
+    string_concatenated = my_string <> " concatenated"
+    IO.puts string_concatenated
+
+    # String comparison
+    IO.puts "Equal? (Dog == Dog): #{"Dog" === "Dog"}"
+
+    # Check if a string contains another string
+    IO.puts String.contains?(my_string, "string")
+
+    # Return first character
+    IO.puts String.first(my_string)
+
+    # Get character at index
+    IO.puts String.at(my_string, 5)
+
+    # Get a substring
+    IO.puts "Substring: #{String.slice(my_string, 3, 5)}"
+
+    # Split a string into a list
+    IO.inspect String.split(string_concatenated, " ")
+
+    # Reverse a string
+    IO.puts String.reverse(string_concatenated)
+
+    # Uppercase
+    IO.puts String.upcase(string_concatenated)
+
+    # Lowercase
+    IO.puts String.downcase(string_concatenated)
+
+    # Capitalize
+    IO.puts String.capitalize(string_concatenated)
+
+    # Pipe output from one to another
+    5 * 10 |> IO.puts
+
+  end
 
 end
