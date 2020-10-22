@@ -1,1 +1,1 @@
-# elixir-studies (Português-BR)
+# elixir-studies
