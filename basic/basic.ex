@@ -223,4 +223,16 @@ defmodule Basic do
     capitais_nova = Map.put_new(capitais, "Sergipe", "Aracaju")
     IO.inspect capitais_nova
   end
+
+  def pattern_matching do
+    [length, width] = [20, 50]
+    IO.puts length
+    IO.puts width
+
+    [_, [_, a]] = [20, [30, 40]]
+    IO.puts a
+
+    {:ok, value} = {:ok, "Successful!"}
+    value
+  end
 end
