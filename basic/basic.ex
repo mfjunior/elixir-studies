@@ -169,4 +169,45 @@ defmodule Basic do
     {weight, height, name} = {190, 1.82, :Mauro}
     IO.puts "Weight: #{weight}"
   end
+
+  def lists do
+    list1 = [1, 2, 3]
+    list2 = [4, 5, 6]
+
+    list3 = list1 ++ list2
+    IO.inspect list3
+    list4 = list3 -- list1
+    IO.inspect list4
+
+    # verify if an item is in a list
+    IO.puts 6 in list4
+
+    [head | tail] = list3
+    IO.puts head
+    IO.inspect tail
+
+    IO.inspect [97,98], charlists: :as_lists
+    IO.puts [97,98]
+
+    # you can enumerate over a list
+    Enum.each list3, fn item -> IO.puts item end
+     
+    words = ["Random", "words", "in a", "list"]
+    Enum.each words, fn word -> IO.puts word end
+
+    words_deleted1 = List.delete(words, "Random")
+    IO.inspect words_deleted1
+
+    words_deleted2 = List.delete_at(words, 1)
+    IO.inspect words_deleted2
+    
+    word_inserted = List.insert_at(words, 3, "Ola")
+    IO.inspect word_inserted
+
+    IO.puts List.first(words)
+    IO.puts List.last(words)
+    
+    key_value_list = [name: "Mauro", altura: 1.90, peso: 120]
+    IO.inspect key_value_list
+  end
 end
