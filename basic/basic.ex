@@ -273,4 +273,42 @@ defmodule Basic do
     even_list = for n <- [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], rem(n,2)==0, do: n
     IO.inspect even_list
   end
+
+  def enumerables do
+    IO.puts Enum.all?(["foo", "bar", "hello"], fn(s) -> String.length(s) == 3 end) # false
+    IO.puts Enum.all?(["foo", "bar", "hello"], fn(s) -> String.length(s) > 1 end)  # true
+    
+    IO.puts Enum.any?(["foo", "bar", "hello"], fn(s) -> String.length(s) == 5 end)  # true
+  
+    IO.inspect Enum.chunk_every([1, 2, 3, 4, 5, 6], 2)
+
+    IO.inspect Enum.chunk_by(["one", "two", "three", "four", "five", "six", "seven", "eight"], fn(x) -> String.length(x) end )
+    
+    IO.inspect Enum.map_every([1, 2, 3, 4, 5, 6, 7, 8], 3, fn x -> x + 1000 end)
+    
+    IO.inspect Enum.each(["one", "two", "three"], fn(s) -> IO.puts(s) end)
+
+    Enum.map([0, 1, 2, 3], fn(x) -> x - 1 end)
+
+    IO.puts Enum.min([-9, 0, 3, 8])
+    IO.inspect Enum.min([], fn -> :foo end)
+
+    IO.puts Enum.max([-9, 0, 3, 8])
+    IO.inspect Enum.max([], fn -> :bar end)
+
+    IO.inspect Enum.filter([1, 2, 3, 4, 5, 6], fn x -> rem(x, 2) == 0 end)
+
+    IO.puts Enum.reduce([1, 2, 3], 10, fn(x, acc) -> x + acc end)
+    IO.puts Enum.reduce([1, 2, 3], fn(x, acc) -> x + acc end)
+    IO.puts Enum.reduce(["a", "b", "c"], "1", fn(x, acc) -> x <> acc end)
+
+    IO.inspect Enum.sort([5, 6, 1, 3, -1, 4])
+    IO.inspect Enum.sort([:foo, "bar", Enum, -1, 4])
+    IO.inspect Enum.sort([%{:val => 4}, %{:val => 1}], fn (x, y) -> x[:val] > y[:val] end)
+    IO.inspect Enum.sort([%{:count => 4}, %{:count => 1}])
+
+    
+    IO.inspect Enum.uniq([1, 2, 3, 2, 1, 1, 1, 1, 1])
+    IO.inspect Enum.uniq_by([%{x: 1, y: 1}, %{x: 2, y: 1}, %{x: 3, y: 3}], fn coord -> coord.y end)
+  end
 end
