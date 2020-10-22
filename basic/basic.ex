@@ -210,4 +210,17 @@ defmodule Basic do
     key_value_list = [name: "Mauro", altura: 1.90, peso: 120]
     IO.inspect key_value_list
   end
+
+  def maps do
+    capitais = %{"Rio Grande do Sul" => "Porto Alegre", 
+      "Santa Catarina" => "Florianópolis", "São Paulo" => "São Paulo",
+      "Espírito Santo" => "Vitória"}
+    IO.puts capitais["Espírito Santo"]
+
+    capitais_atoms = %{acre: "Rio Branco", amazonas: "Manaus", roraima: "Boa Vista"}
+    IO.puts capitais_atoms.amazonas
+
+    capitais_nova = Map.put_new(capitais, "Sergipe", "Aracaju")
+    IO.inspect capitais_nova
+  end
 end
