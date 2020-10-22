@@ -250,4 +250,19 @@ defmodule Basic do
     add_sum.({7,10})
     add_sum.({10, 15, 3})
   end
+
+  def loop_with_factorial do
+    IO.puts factorial(5)
+    IO.puts factorial(4)
+    IO.puts factorial(3)
+  end
+
+  defp factorial(num) do
+    if num <= 1 do
+      1
+    else
+      result = num * factorial(num - 1)
+      result
+    end
+  end
 end
