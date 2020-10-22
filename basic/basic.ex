@@ -265,4 +265,12 @@ defmodule Basic do
       result
     end
   end
+
+  def comprehensions do
+    double_list = for n <- [1, 2, 3], do: n * 2
+    IO.inspect double_list
+
+    even_list = for n <- [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], rem(n,2)==0, do: n
+    IO.inspect even_list
+  end
 end
