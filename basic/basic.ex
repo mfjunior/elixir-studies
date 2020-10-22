@@ -235,4 +235,19 @@ defmodule Basic do
     {:ok, value} = {:ok, "Successful!"}
     value
   end
+
+  def anonymous_functions do
+    get_sum = fn(x, y) -> x + y end
+    IO.puts "5 + 10 : #{get_sum.(5, 10)}"
+
+    get_less = &(&1 - &2)
+    IO.puts "7 - 1 : #{get_less.(7, 1)}"
+
+    add_sum = fn 
+      {x, y} -> IO.puts "#{x} + #{y} : #{x + y}"
+      {x, y, z} -> IO.puts "#{x} + #{y} + #{z} : #{x + y + z}"
+    end
+    add_sum.({7,10})
+    add_sum.({10, 15, 3})
+  end
 end
