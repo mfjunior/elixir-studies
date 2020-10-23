@@ -16,9 +16,9 @@ defmodule Geometry do
     length * width
   end
 
-@doc """
-Calculate the area of a square shape
-"""
+  @doc """
+  Calculate the area of a square shape
+  """
   def square_area(length \\ 1) do
     length * length
   end
