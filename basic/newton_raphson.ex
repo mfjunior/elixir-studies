@@ -1,4 +1,6 @@
 defmodule NewtonRaphson do
+  @moduledoc false
+  
   import Kernel, except: [raise: 2]
 
   def nth_root(x, n) do

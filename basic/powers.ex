@@ -1,8 +1,9 @@
 defmodule Powers do
-  import Kernel, except: [raise: 2]
   @moduledoc """
   Recursive exercises.
   """
+  
+  import Kernel, except: [raise: 2]
 
   def raise(x, n) do
     cond do

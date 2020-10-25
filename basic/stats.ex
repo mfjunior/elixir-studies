@@ -1,5 +1,6 @@
 defmodule Stats do
-    
+  @moduledoc false
+  
   def minimum(list) do
     [head | tail] = list
     minimum(tail, head)      

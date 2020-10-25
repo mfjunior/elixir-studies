@@ -1,4 +1,6 @@
 defmodule Hello do
+  @moduledoc false
+  
   def print(lang \\ :pt)
   def print(:de), do: "Hallo Welt"
   def print(:en), do: "Hello World"

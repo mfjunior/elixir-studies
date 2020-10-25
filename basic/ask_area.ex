@@ -1,5 +1,6 @@
 defmodule AskArea do
-
+  @moduledoc false
+  
   def area() do
     input = IO.gets("(R)ectangle, (T)riangle, (E)llipse: ")
     shape = char_to_shape(String.first(input))

@@ -1,4 +1,5 @@
 defmodule Dates do
+  @moduledoc false
   
   def julian(date_str) do
     [y, m, d] = date_parts(date_str)

@@ -1,4 +1,5 @@
 defmodule Basic do
+  @moduledoc false
   
   # gets user input and removes the newline
   def get_input do
