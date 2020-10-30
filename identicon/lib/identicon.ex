@@ -14,10 +14,16 @@ defmodule Identicon do
     |> save_image(input)
   end
 
+  def teste(input) do
+    input
+    |> hash_input
+    |> pick_color
+    |> build_grid
+  end
+  
   def hash_input(input) do
-    hex =
-      :crypto.hash(:md5, input)
-      |> :binary.bin_to_list()
+    hex = :crypto.hash(:md5, input)
+    hex = :binary.bin_to_list(hex)
     
     %Identicon.Image{hex: hex}
   end
