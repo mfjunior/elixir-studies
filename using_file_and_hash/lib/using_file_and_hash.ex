@@ -50,9 +50,14 @@ defmodule UsingFileAndHash do
   @spec make_room_list(String.t) :: Map.t
   
   def make_room_list(file_name) do
-    {_result, device} = File.open(file_name, [:read, :utf8])
-    room_list = Map.new()
-    process_line(device, room_list)
+    {result, device} = File.open(file_name, [:read, :utf8])
+    case result do
+      :ok ->
+        room_list = Map.new()
+        process_line(device, room_list)
+      :error ->
+        IO.puts("Erro ao ler arquivo - reason: #{device}")
+    end
   end
 
   # Read next line from file; if not end of file, process
