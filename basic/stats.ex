@@ -19,8 +19,8 @@ defmodule Stats do
   end
 
   def maximum(list) do
-      [head | tail] = list
-      maximum(tail, head)
+    [head | tail] = list
+    maximum(tail, head)
   end
 
   defp maximum([], result) do
